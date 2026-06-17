@@ -975,6 +975,19 @@
       margin-right: 6px;
     }
 
+    /* Primary tier — core service cities: larger, bolder */
+    .city-pill--primary {
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 10px 22px;
+    }
+
+    /* Secondary tier — extended reach cities: slightly smaller, softer */
+    .city-pill--secondary {
+      font-size: 0.82rem;
+      opacity: 0.80;
+    }
+
     /* =========================================
        === ADDITION 2: SERVICES UPDATE ===
        ========================================= */
@@ -1522,74 +1535,50 @@
     </section>
 
     <!-- =========================================
-         SERVICE AREA
+         SERVICE AREA — CHANDLER RADIUS
+         /* === SERVICE AREA: CHANDLER RADIUS === */
          ========================================= -->
     <section class="service-area" id="service-area" aria-labelledby="area-heading">
       <div class="wrap">
         <div class="sec-head">
           <span class="eyebrow">Coverage</span>
           <h2 class="sec-title" id="area-heading">Where We Work</h2>
-          <p class="sec-sub">
-            From the Valley to Tucson and everything on I-10 in between.
+          <p class="sec-sub" style="color: var(--steel);">
+            Based in Chandler. Serving the East Valley within a comfortable drive.
           </p>
         </div>
 
         <div class="area-regions" role="list" aria-label="Cities we serve">
 
-          <!-- Group 1: Phoenix Metro -->
+          <!-- Group 1: Core Service Area -->
           <div class="area-region" role="listitem">
-            <span class="area-region-label">Phoenix Metro</span>
+            <span class="area-region-label">Core Service Area</span>
             <div class="area-pills">
-              <span class="city-pill">Phoenix</span>
-              <span class="city-pill">Scottsdale</span>
-              <span class="city-pill">Tempe</span>
-              <span class="city-pill">Mesa</span>
-              <span class="city-pill">Chandler</span>
-              <span class="city-pill">Gilbert</span>
-              <span class="city-pill">Glendale</span>
-              <span class="city-pill">Peoria</span>
-              <span class="city-pill">Surprise</span>
-              <span class="city-pill">Avondale</span>
-              <span class="city-pill">Goodyear</span>
-              <span class="city-pill">Buckeye</span>
-              <span class="city-pill">Queen Creek</span>
-              <span class="city-pill">San Tan Valley</span>
-              <span class="city-pill">Maricopa</span>
+              <span class="city-pill city-pill--primary">Chandler</span>
+              <span class="city-pill city-pill--primary">Gilbert</span>
+              <span class="city-pill city-pill--primary">Sun Lakes</span>
+              <span class="city-pill city-pill--primary">Mesa</span>
+              <span class="city-pill city-pill--primary">Tempe</span>
+              <span class="city-pill city-pill--primary">Ahwatukee</span>
             </div>
           </div>
 
           <div class="area-region-separator" aria-hidden="true"></div>
 
-          <!-- Group 2: Tucson & Southern Arizona -->
+          <!-- Group 2: We'll Still Come -->
           <div class="area-region" role="listitem">
-            <span class="area-region-label">Tucson &amp; Southern Arizona</span>
+            <span class="area-region-label">We'll Still Come</span>
             <div class="area-pills">
-              <span class="city-pill">Tucson</span>
-              <span class="city-pill">Marana</span>
-              <span class="city-pill">Oro Valley</span>
-              <span class="city-pill">Sahuarita</span>
-              <span class="city-pill">Green Valley</span>
-              <span class="city-pill">Vail</span>
-              <span class="city-pill">Sierra Vista</span>
-            </div>
-          </div>
-
-          <div class="area-region-separator" aria-hidden="true"></div>
-
-          <!-- Group 3: The I-10 Corridor -->
-          <div class="area-region" role="listitem">
-            <span class="area-region-label">The I-10 Corridor</span>
-            <div class="area-pills">
-              <span class="city-pill">Casa Grande</span>
-              <span class="city-pill">Eloy</span>
-              <span class="city-pill">Coolidge</span>
+              <span class="city-pill city-pill--secondary">Queen Creek</span>
+              <span class="city-pill city-pill--secondary">San Tan Valley</span>
+              <span class="city-pill city-pill--secondary">Apache Junction</span>
             </div>
           </div>
 
         </div>
 
         <p class="area-corridor-callout">
-          <span class="area-corridor-dash">—</span>Running the full Phoenix-to-Tucson corridor. If you're on I-10, we can get to you.
+          Don't see your area listed? Give us a call — we may still be able to help.
         </p>
 
       </div>
