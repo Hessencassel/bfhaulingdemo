@@ -2547,6 +2547,7 @@
                 (create a simple thank-you.html, or remove "action" to use Netlify's default page)
             -->
             <form
+              id="quote-form"
               name="contact"
               method="POST"
               data-netlify="true"
@@ -2626,6 +2627,32 @@
                 Request My Free Quote
               </button>
             </form>
+
+            <div id="form-success"
+                 style="display:none;
+                        background:rgba(232,93,4,0.1);
+                        border:1px solid var(--accent);
+                        border-radius:4px;
+                        padding:1.5rem 2rem;
+                        margin-top:1rem;"
+                 role="alert">
+              <p style="font-family:'Oswald',sans-serif;
+                         color:var(--accent);
+                         font-size:1.2rem;
+                         margin:0 0 0.5rem;
+                         text-transform:uppercase;">
+                Request Received.
+              </p>
+              <p style="font-family:'Inter',sans-serif;
+                         color:var(--text);
+                         margin:0;
+                         line-height:1.7;">
+                We have your request and will get back to you same day.
+                Need a faster response? Text us directly at
+                <!-- REPLACE: phone number -->
+                <a href="sms:+1XXXXXXXXXX" style="color:var(--accent);">text us here</a>.
+              </p>
+            </div>
           </div>
 
         </div>
@@ -2860,6 +2887,47 @@
     document.querySelectorAll('.reveal').forEach(el => {
       revealObserver.observe(el);
     });
+  </script>
+
+  <!-- Form AJAX submit -->
+  <script>
+    /* === FORM AJAX SUBMIT === */
+    (function () {
+      var quoteForm = document.getElementById('quote-form');
+
+      if (quoteForm) {
+        quoteForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          var submitBtn  = quoteForm.querySelector('[type="submit"]');
+          var successMsg = document.getElementById('form-success');
+          var origText   = submitBtn.textContent;
+
+          submitBtn.disabled    = true;
+          submitBtn.textContent = 'SENDING…';
+
+          fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(new FormData(quoteForm)).toString()
+          })
+          .then(function (response) {
+            if (response.ok) {
+              quoteForm.style.display  = 'none';
+              successMsg.style.display = 'block';
+              successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+              throw new Error('Submission failed');
+            }
+          })
+          .catch(function () {
+            submitBtn.disabled    = false;
+            submitBtn.textContent = origText;
+            alert('Something went wrong. Please try again or text us directly for a fast quote.');
+          });
+        });
+      }
+    }());
   </script>
 
   <!-- FAQ accordion -->

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Received | BF Hauling &amp; Demo — Chandler, AZ</title>
+  <meta name="description" content="Thanks for reaching out to BF Hauling &amp; Demo. We'll get back to you with a quote same day.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%231A1A1A'/%3E%3Ctext x='2' y='26' font-size='24' fill='%23E85D04'%3E%F0%9F%9A%9B%3C/text%3E%3C/svg%3E">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg:           #1A1A1A;
+      --surface:      #242424;
+      --accent:       #E85D04;
+      --accent-dark:  #C44E03;
+      --steel:        #8B8B8B;
+      --text:         #F0EFEB;
+      --text-muted:   #A8A7A2;
+      --font-display: 'Oswald', sans-serif;
+      --font-body:    'Inter', sans-serif;
+      --max-w:   1200px;
+      --pad-x:   clamp(16px, 4vw, 48px);
+      --radius:  6px;
+      --ease:    0.22s ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    a      { color: inherit; text-decoration: none; }
+    ul     { list-style: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    /* =========================================
+       HEADER / NAV
+       ========================================= */
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(26, 26, 26, 0.96);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: box-shadow var(--ease);
+    }
+    .site-header.scrolled { box-shadow: 0 2px 24px rgba(0,0,0,0.55); }
+
+    .nav-wrap {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo { display: flex; flex-direction: column; line-height: 1; gap: 3px; }
+    .logo-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+    }
+    .logo-tag {
+      font-family: var(--font-body);
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--steel);
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 36px; }
+    .nav-links a {
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      position: relative;
+      transition: color var(--ease);
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 2px;
+      background: var(--accent);
+      transition: width var(--ease);
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      padding: 10px 22px;
+      background: var(--accent);
+      color: var(--text);
+      border-radius: var(--radius);
+      transition: background var(--ease);
+    }
+    .nav-cta:hover { background: var(--accent-dark); }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 8px;
+      z-index: 101;
+    }
+    .hamburger span {
+      display: block;
+      width: 26px; height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all var(--ease);
+      transform-origin: center;
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 72px; left: 0; right: 0;
+      background: rgba(26, 26, 26, 0.98);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      padding: 20px var(--pad-x) 28px;
+      flex-direction: column;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      z-index: 99;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: color var(--ease);
+    }
+    .mobile-menu a:hover { color: var(--accent); }
+    .mobile-menu .mob-cta {
+      margin-top: 18px;
+      border-bottom: none;
+      background: var(--accent);
+      color: var(--text);
+      border-radius: var(--radius);
+      text-align: center;
+      padding: 15px;
+    }
+    .mobile-menu .mob-cta:hover { color: var(--text); background: var(--accent-dark); }
+
+    /* =========================================
+       THANK-YOU CONTENT
+       ========================================= */
+    .ty-main {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px var(--pad-x) 80px;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at 50% 60%, rgba(232, 93, 4, 0.12) 0%, rgba(30, 30, 30, 0.4) 48%, var(--bg) 70%),
+        var(--bg);
+    }
+
+    .ty-inner { max-width: 620px; }
+
+    .ty-eyebrow {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .ty-headline {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(2.4rem, 6vw, 4.5rem);
+      text-transform: uppercase;
+      line-height: 1.0;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      margin-bottom: 28px;
+    }
+
+    .ty-body {
+      font-size: 1.05rem;
+      color: var(--steel);
+      line-height: 1.8;
+      margin-bottom: 44px;
+    }
+
+    .ty-btn {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      padding: 15px 34px;
+      border-radius: var(--radius);
+      background: var(--accent);
+      color: var(--text);
+      border: 2px solid var(--accent);
+      transition: all var(--ease);
+      cursor: pointer;
+    }
+    .ty-btn:hover {
+      background: var(--accent-dark);
+      border-color: var(--accent-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(232, 93, 4, 0.38);
+    }
+
+    /* =========================================
+       FOOTER
+       ========================================= */
+    .site-footer {
+      background: #111111;
+      border-top: 2px solid var(--accent);
+      padding-top: 64px;
+    }
+    .footer-grid {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--pad-x) 60px;
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr;
+      gap: 52px;
+    }
+    .f-brand-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.28rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .f-brand-tag {
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--steel);
+      margin-bottom: 18px;
+    }
+    .f-brand-desc { font-size: 0.9rem; color: var(--steel); line-height: 1.72; max-width: 280px; }
+    .f-col-head {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+    }
+    .f-links { display: flex; flex-direction: column; gap: 12px; }
+    .f-links a { font-size: 0.9rem; color: var(--steel); transition: color var(--ease); }
+    .f-links a:hover { color: var(--accent); }
+    .f-area-text { font-size: 0.9rem; color: var(--steel); line-height: 1.85; margin-bottom: 18px; }
+    .f-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(232, 93, 4, 0.10);
+      border: 1px solid rgba(232, 93, 4, 0.28);
+      border-radius: var(--radius);
+      padding: 8px 14px;
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+    }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); }
+    .footer-bottom-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 20px var(--pad-x);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .f-copy { font-size: 0.8rem; color: var(--steel); }
+    .f-copy a { color: var(--accent); }
+    .f-copy a:hover { text-decoration: underline; }
+
+    /* =========================================
+       RESPONSIVE
+       ========================================= */
+    @media (max-width: 1024px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid > *:first-child { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 767px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-grid > *:first-child { grid-column: auto; }
+      .footer-bottom-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="site-header" role="banner">
+    <div class="nav-wrap">
+
+      <a href="/" class="nav-logo" aria-label="BF Hauling &amp; Demo — Home">
+        <span class="logo-name">BF Hauling &amp; Demo</span>
+        <span class="logo-tag">Father &amp; Son. Built to Haul.</span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-links" role="list">
+          <li><a href="/#services">Services</a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#service-area">Service Area</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="/" class="nav-cta">Back to Home</a>
+
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </header>
+
+  <nav
+    class="mobile-menu"
+    id="mobile-menu"
+    aria-label="Mobile navigation"
+    aria-hidden="true"
+  >
+    <a href="/#services">Services</a>
+    <a href="/#about">About</a>
+    <a href="/#service-area">Service Area</a>
+    <a href="/#contact">Contact</a>
+    <a href="/" class="mob-cta">Back to Home</a>
+  </nav>
+
+  <main>
+    <div class="ty-main">
+      <div class="ty-inner">
+        <span class="ty-eyebrow">Request Received</span>
+        <h1 class="ty-headline">We'll Be in Touch Same Day.</h1>
+        <p class="ty-body">
+          Thanks for reaching out to BF Hauling &amp; Demo. We've got your
+          request and we'll get back to you with a quote fast.
+          If you need us sooner, text us directly.
+        </p>
+        <a href="/" class="ty-btn">Back to Home</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-grid">
+
+      <div>
+        <div class="f-brand-name">BF Hauling &amp; Demo</div>
+        <div class="f-brand-tag">Father &amp; Son. Built to Haul.</div>
+        <p class="f-brand-desc">
+          Arizona's hardest-working father &amp; son hauling and demolition crew.
+          Licensed, insured, and ready to work.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="f-col-head">Quick Links</h4>
+        <ul class="f-links" role="list">
+          <li><a href="/#services">Services</a></li>
+          <li><a href="/#about">About Us</a></li>
+          <li><a href="/#service-area">Service Area</a></li>
+          <li><a href="/#contact">Get a Quote</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="f-col-head">Serving the East Valley</h4>
+        <p class="f-area-text">
+          Chandler · Gilbert · Sun Lakes · Mesa<br>
+          Tempe · Ahwatukee
+        </p>
+        <div class="f-badge">
+          <span aria-hidden="true" style="display:inline-flex;width:1rem;height:1rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3.5v5C20 15.1 16.6 19.7 12 21 7.4 19.7 4 15.1 4 10.5V5.5L12 2z"/><polyline points="9,12 11,14 15,10"/></svg></span>
+          Licensed &amp; Insured
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner">
+        <p class="f-copy">
+          &copy; 2025 BF Hauling &amp; Demo. All rights reserved.
+          | <a href="https://bfhaulingdemo.com">bfhaulingdemo.com</a>
+        </p>
+        <p class="f-copy">
+          Arizona Hauling &amp; Demolition — Family Owned &amp; Operated
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', function () {
+      header.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+
+    const hamburger  = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    function openMenu() {
+      hamburger.classList.add('open');
+      mobileMenu.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', function () {
+      hamburger.classList.contains('open') ? closeMenu() : openMenu();
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('click', function (e) {
+      if (
+        mobileMenu.classList.contains('open') &&
+        !hamburger.contains(e.target) &&
+        !mobileMenu.contains(e.target)
+      ) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeMenu();
+    });
+  </script>
+
+</body>
+</html>
