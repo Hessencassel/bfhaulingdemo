@@ -3,17 +3,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BF Hauling &amp; Demo | Arizona Hauling &amp; Demolition — Father &amp; Son Crew</title>
-  <meta name="description" content="BF Hauling &amp; Demo is Arizona's hardest-working father &amp; son hauling and demolition crew. Junk removal, interior demo, cleanouts, construction waste hauling, and more. Free estimates. Same-week service. Licensed &amp; insured.">
+  <title>BF Hauling &amp; Demo | Junk Removal &amp; Demolition — Chandler, AZ</title>
+  <meta name="description" content="Father and son junk hauling and demolition crew serving Chandler, Gilbert, Mesa, Tempe, Ahwatukee, and the East Valley. Upfront pricing, same-day response, no hidden fees. Call or text for a free quote.">
+  <meta name="geo.region" content="US-AZ">
+  <meta name="geo.placename" content="Chandler, Arizona">
+  <meta name="geo.position" content="33.3061;-111.8412">
+  <meta name="ICBM" content="33.3061, -111.8412">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://bfhaulingdemo.com">
+  <!-- SITEMAP: submit https://bfhaulingdemo.com/sitemap.xml
+       to Google Search Console once domain is live -->
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://bfhaulingdemo.com">
-  <meta property="og:title" content="BF Hauling &amp; Demo | Arizona's Father &amp; Son Hauling Crew">
-  <meta property="og:description" content="We haul it. We demo it. We clean it up. Arizona's hardest-working father &amp; son hauling and demolition crew. Free estimates — call us today.">
+  <meta property="og:title" content="BF Hauling &amp; Demo | Chandler, AZ">
+  <meta property="og:description" content="Father and son junk hauling and demolition serving the East Valley. Upfront pricing, same-day response.">
   <meta property="og:site_name" content="BF Hauling &amp; Demo">
+
+  <!-- LocalBusiness structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "BF Hauling & Demo",
+    "description": "Father and son junk hauling and demolition company serving Chandler and the East Valley. Specializing in junk removal, interior demolition, estate cleanouts, construction debris hauling, and yard waste.",
+    "url": "https://bfhaulingdemo.com",
+    "telephone": "<!-- REPLACE: phone number -->",
+    "email": "<!-- REPLACE: email address -->",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Chandler",
+      "addressRegion": "AZ",
+      "addressCountry": "US"
+    },
+    "areaServed": [
+      {"@type": "City", "name": "Chandler"},
+      {"@type": "City", "name": "Gilbert"},
+      {"@type": "City", "name": "Mesa"},
+      {"@type": "City", "name": "Tempe"},
+      {"@type": "Neighborhood", "name": "Ahwatukee"},
+      {"@type": "City", "name": "Sun Lakes"},
+      {"@type": "City", "name": "Queen Creek"},
+      {"@type": "City", "name": "San Tan Valley"},
+      {"@type": "City", "name": "Apache Junction"}
+    ],
+    "serviceType": [
+      "Junk Removal",
+      "Demolition",
+      "Estate Cleanouts",
+      "Garage Cleanouts",
+      "Construction Debris Hauling",
+      "Yard Waste Removal",
+      "Trailer Hauling"
+    ],
+    "priceRange": "$$",
+    "openingHours": "Mo-Sa 07:00-18:00",
+    "sameAs": []
+  }
+  </script>
+  <!-- REPLACE: add Google Business Profile URL and any social links to sameAs array -->
+  <!-- REPLACE: update telephone and email fields with real contact info -->
+  <!-- REPLACE: update openingHours to match actual business hours -->
+
+  <!-- FAQPage structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What areas do you serve?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We serve Chandler, Gilbert, Mesa, Tempe, Ahwatukee, Sun Lakes, Queen Creek, San Tan Valley, and Apache Junction. Call us if you're unsure — we may still be able to help."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you price your jobs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We price by load, not by the hour. We give you an upfront quote before we touch a single item. No hidden fees, no surprises."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How fast can you come out?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Text us a photo of the job and we'll get back to you same day with a price. We typically schedule within the same week."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you do interior demolition?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We handle walls, flooring, sheds, patios, fences, and more. We also haul away everything we demo."
+        }
+      }
+    ]
+  }
+  </script>
 
   <!-- Favicon: inline SVG dump truck in burnt orange -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%231A1A1A'/%3E%3Ctext x='2' y='26' font-size='24' fill='%23E85D04'%3E%F0%9F%9A%9B%3C/text%3E%3C/svg%3E">
@@ -1297,6 +1390,176 @@
       flex-shrink: 0;
     }
     .inline-icon svg { width: 100%; height: 100%; }
+
+    /* =========================================
+       SCROLL REVEAL ANIMATIONS
+       ========================================= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+    .reveal-delay-6 { transition-delay: 0.6s; }
+
+    /* =========================================
+       === FLOATING CALL BUTTON ===
+       ========================================= */
+    .float-call-btn {
+      display: none; /* hidden on desktop */
+      position: fixed;
+      bottom: 90px; /* clears the sticky SMS bar at the very bottom */
+      right: 20px;
+      z-index: 999;
+      background-color: var(--accent); /* burnt orange */
+      color: var(--bg); /* dark charcoal text/icon */
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(232, 93, 4, 0.45);
+      animation: pulse-ring 2.2s ease-out infinite;
+      gap: 2px;
+    }
+
+    .float-call-btn svg {
+      width: 26px;
+      height: 26px;
+      color: var(--bg);
+    }
+
+    .float-call-label {
+      font-family: var(--font-display); /* Oswald */
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--bg);
+      line-height: 1;
+    }
+
+    @keyframes pulse-ring {
+      0%   { box-shadow: 0 0 0 0 rgba(232, 93, 4, 0.55); }
+      70%  { box-shadow: 0 0 0 14px rgba(232, 93, 4, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(232, 93, 4, 0); }
+    }
+
+    @media (max-width: 767px) {
+      .float-call-btn {
+        display: flex;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .float-call-btn {
+        animation: none;
+        box-shadow: 0 4px 20px rgba(232, 93, 4, 0.45);
+      }
+    }
+
+    /* =========================================
+       === STATS COUNTER STRIP ===
+       ========================================= */
+    .stats-strip {
+      background: #1E1E1E;
+      padding: clamp(4rem, 6vw, 5rem) 0;
+    }
+
+    .stats-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    .stat-item {
+      flex: 1 1 0;
+      text-align: center;
+      padding: 0 clamp(12px, 2.5vw, 32px);
+    }
+
+    .stat-number {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(3rem, 5vw, 5rem);
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .stat-suffix {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(3rem, 5vw, 5rem);
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .stat-sublabel {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-style: italic;
+      color: var(--steel);
+    }
+
+    .stat-divider {
+      width: 1px;
+      height: 72px;
+      background: rgba(232, 93, 4, 0.2);
+      flex-shrink: 0;
+      align-self: center;
+    }
+
+    @media (max-width: 900px) {
+      .stats-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem 0;
+      }
+
+      .stat-divider {
+        display: none;
+      }
+
+      .stat-item {
+        padding: 0 1rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1384,24 +1647,63 @@
          ========================================= -->
     <div class="trust-bar" role="region" aria-label="Why choose us">
       <div class="trust-inner">
-        <div class="trust-item">
+        <div class="trust-item reveal reveal-delay-1">
           <span class="trust-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3.5v5C20 15.1 16.6 19.7 12 21 7.4 19.7 4 15.1 4 10.5V5.5L12 2z"/><polyline points="9,12 11,14 15,10"/></svg></span>
           <span class="trust-text">Licensed &amp; Insured</span>
         </div>
-        <div class="trust-item">
+        <div class="trust-item reveal reveal-delay-2">
           <span class="trust-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="12" y2="17"/></svg></span>
           <span class="trust-text">Free Estimates</span>
         </div>
-        <div class="trust-item">
+        <div class="trust-item reveal reveal-delay-3">
           <span class="trust-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12,7 12,12 15,15"/></svg></span>
           <span class="trust-text">Same-Week Service</span>
         </div>
-        <div class="trust-item">
+        <div class="trust-item reveal reveal-delay-4">
           <span class="trust-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12L12 3l9 9"/><path d="M5 10v9a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1v-9"/></svg></span>
           <span class="trust-text">Family Owned</span>
         </div>
       </div>
     </div>
+
+    <!-- =========================================
+         STATS COUNTER STRIP
+         ========================================= -->
+    <section class="stats-strip" id="stats" aria-label="By the numbers">
+      <div class="stats-inner">
+
+        <div class="stat-item reveal reveal-delay-1">
+          <p class="stat-number"><span class="stat-count" data-target="2">2</span></p>
+          <p class="stat-label">MAN CREW</p>
+          <p class="stat-sublabel">On every single job</p>
+        </div>
+
+        <div class="stat-divider" aria-hidden="true"></div>
+
+        <div class="stat-item reveal reveal-delay-2">
+          <p class="stat-number"><span class="stat-count" data-target="100">100</span><span class="stat-suffix">%</span></p>
+          <p class="stat-label">UPFRONT PRICING</p>
+          <p class="stat-sublabel">Quote before we touch anything</p>
+        </div>
+
+        <div class="stat-divider" aria-hidden="true"></div>
+
+        <div class="stat-item reveal reveal-delay-3">
+          <p class="stat-number"><span class="stat-count" data-target="0" data-count-down="true">0</span></p>
+          <p class="stat-label">HIDDEN FEES</p>
+          <p class="stat-sublabel">Ever. On any job.</p>
+        </div>
+
+        <div class="stat-divider" aria-hidden="true"></div>
+
+        <div class="stat-item reveal reveal-delay-4">
+          <p class="stat-number"><span class="stat-count" data-target="1">1</span></p>
+          <p class="stat-label">CALL TO BOOK</p>
+          <p class="stat-sublabel">Or text us a photo</p>
+        </div>
+
+      </div>
+    </section>
 
     <!-- DIAGONAL SLASH DIVIDER — dump gate / caution stripe -->
     <div class="slash-divider" aria-hidden="true"></div>
@@ -1411,7 +1713,7 @@
          ========================================= -->
     <section class="services" id="services" aria-labelledby="services-heading">
       <div class="wrap">
-        <div class="sec-head">
+        <div class="sec-head reveal">
           <span class="eyebrow">What We Do</span>
           <h2 class="sec-title" id="services-heading">Built for the Jobs Nobody Else Wants</h2>
           <p class="sec-sub">
@@ -1422,7 +1724,7 @@
 
         <div class="services-grid">
 
-          <article class="svc-card">
+          <article class="svc-card reveal reveal-delay-1">
             <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,6 5,6 21,6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg></span>
             <h3 class="svc-name">Junk &amp; Debris Removal</h3>
             <p class="svc-desc">
@@ -1432,7 +1734,7 @@
             <p class="svc-price">Priced by load, not by the hour</p>
           </article>
 
-          <article class="svc-card">
+          <article class="svc-card reveal reveal-delay-2">
             <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="7" rx="1"/><line x1="12" y1="10" x2="4" y2="21"/></svg></span>
             <h3 class="svc-name">Interior Demolition</h3>
             <p class="svc-desc">
@@ -1442,7 +1744,7 @@
             <p class="svc-price">Walls, flooring, sheds, patios, fences</p>
           </article>
 
-          <article class="svc-card">
+          <article class="svc-card reveal reveal-delay-3">
             <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="21,8 21,21 3,21 3,8"/><polyline points="23,3 1,3 3,8 21,8"/><line x1="12" y1="3" x2="12" y2="8"/></svg></span>
             <h3 class="svc-name">Estate &amp; Garage Cleanouts</h3>
             <p class="svc-desc">
@@ -1452,7 +1754,7 @@
             <p class="svc-price">We haul everything. You point, we load.</p>
           </article>
 
-          <article class="svc-card">
+          <article class="svc-card reveal reveal-delay-4">
             <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="7" width="14" height="9" rx="1"/><path d="M15 10h4.5L22 13v3h-7v-6z"/><circle cx="5" cy="19" r="2"/><circle cx="18" cy="19" r="2"/></svg></span>
             <h3 class="svc-name">Construction Debris Hauling</h3>
             <p class="svc-desc">
@@ -1462,7 +1764,7 @@
             <p class="svc-price">We work alongside your crew or after they're done</p>
           </article>
 
-          <article class="svc-card">
+          <article class="svc-card reveal reveal-delay-5">
             <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0118 5.2C18.8 4 20 3.3 21 3c-1.5 4.5-1 7.5-4 11a7 7 0 01-6 2z"/><path d="M11 20L3 22"/></svg></span>
             <h3 class="svc-name">Yard &amp; Landscaping Debris</h3>
             <p class="svc-desc">
@@ -1472,7 +1774,7 @@
             <p class="svc-price">Bagged or loose — we take it all</p>
           </article>
 
-          <article class="svc-card">
+          <article class="svc-card reveal reveal-delay-6">
             <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="8" width="6" height="8" rx="1"/><path d="M7 13h15v3H7z"/><circle cx="12" cy="19.5" r="1.5"/><circle cx="20" cy="19.5" r="1.5"/></svg></span>
             <h3 class="svc-name">Trailer &amp; Truck Hauling</h3>
             <p class="svc-desc">
@@ -1485,7 +1787,7 @@
         </div>
 
         <!-- NO HIDDEN FEES callout bar -->
-        <div class="no-fees-bar" role="note" aria-label="Our pricing promise">
+        <div class="no-fees-bar reveal" role="note" aria-label="Our pricing promise">
           <p class="no-fees-headline">NO HIDDEN FEES.</p>
           <p class="no-fees-sub">You see the truck, you see the price. We quote before we touch a single item.</p>
         </div>
@@ -1500,7 +1802,7 @@
       <div class="wrap">
         <div class="about-grid">
 
-          <div class="about-text">
+          <div class="about-text reveal">
             <span class="about-label">Who We Are</span>
             <h2 class="about-title" id="about-heading">We Started This to Do Honest Work.</h2>
             <div class="about-body">
@@ -1521,7 +1823,7 @@
             </div>
           </div>
 
-          <aside class="callout" aria-label="Our promise">
+          <aside class="callout reveal reveal-delay-2" aria-label="Our promise">
             <span class="callout-mark" aria-hidden="true">"</span>
             <p class="callout-quote callout-quote--about">
               We show up when we say we will. We price it before we touch it.
@@ -1534,17 +1836,17 @@
 
         <!-- Trust icon strip -->
         <div class="about-trust-strip" role="list" aria-label="Our commitments">
-          <div class="trust-strip-item" role="listitem">
+          <div class="trust-strip-item reveal reveal-delay-1" role="listitem">
             <span class="trust-strip-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="13" height="11" rx="1"/><path d="M14 10h4l2.5 2.5V17H14v-7z"/><circle cx="5" cy="19" r="2"/><circle cx="18.5" cy="19" r="2"/></svg></span>
             <span class="trust-strip-label">Father &amp; Son Team</span>
           </div>
           <div class="trust-strip-divider" aria-hidden="true"></div>
-          <div class="trust-strip-item" role="listitem">
+          <div class="trust-strip-item reveal reveal-delay-2" role="listitem">
             <span class="trust-strip-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><polyline points="9,12 11,14 15,10"/></svg></span>
             <span class="trust-strip-label">Upfront Pricing Every Time</span>
           </div>
           <div class="trust-strip-divider" aria-hidden="true"></div>
-          <div class="trust-strip-item" role="listitem">
+          <div class="trust-strip-item reveal reveal-delay-3" role="listitem">
             <span class="trust-strip-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.7 2 6 4.7 6 8c0 4.5 6 13 6 13s6-8.5 6-13c0-3.3-2.7-6-6-6z"/><circle cx="12" cy="8" r="2"/></svg></span>
             <span class="trust-strip-label">Chandler · East Valley</span>
           </div>
@@ -1559,7 +1861,7 @@
          ========================================= -->
     <section class="service-area" id="service-area" aria-labelledby="area-heading">
       <div class="wrap">
-        <div class="sec-head">
+        <div class="sec-head reveal">
           <span class="eyebrow">Coverage</span>
           <h2 class="sec-title" id="area-heading">Where We Work</h2>
           <p class="sec-sub" style="color: var(--steel);">
@@ -1571,8 +1873,8 @@
 
           <!-- Group 1: Core Service Area -->
           <div class="area-region" role="listitem">
-            <span class="area-region-label">Core Service Area</span>
-            <div class="area-pills">
+            <span class="area-region-label reveal reveal-delay-1">Core Service Area</span>
+            <div class="area-pills reveal reveal-delay-2">
               <span class="city-pill city-pill--primary">Chandler</span>
               <span class="city-pill city-pill--primary">Gilbert</span>
               <span class="city-pill city-pill--primary">Sun Lakes</span>
@@ -1586,8 +1888,8 @@
 
           <!-- Group 2: We'll Still Come -->
           <div class="area-region" role="listitem">
-            <span class="area-region-label">We'll Still Come</span>
-            <div class="area-pills">
+            <span class="area-region-label reveal reveal-delay-1">We'll Still Come</span>
+            <div class="area-pills reveal reveal-delay-2">
               <span class="city-pill city-pill--secondary">Queen Creek</span>
               <span class="city-pill city-pill--secondary">San Tan Valley</span>
               <span class="city-pill city-pill--secondary">Apache Junction</span>
@@ -1596,7 +1898,7 @@
 
         </div>
 
-        <p class="area-corridor-callout">
+        <p class="area-corridor-callout reveal">
           Don't see your area listed? Give us a call — we may still be able to help.
         </p>
 
@@ -1613,7 +1915,7 @@
         <div class="quote-options-split">
 
           <!-- Left: Text Us card -->
-          <div class="text-us-card">
+          <div class="text-us-card reveal reveal-delay-1">
             <span class="text-us-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/><line x1="9" y1="10" x2="15" y2="10"/><line x1="9" y1="14" x2="13" y2="14"/></svg></span>
             <p class="text-us-headline">Text A Photo</p>
             <p class="text-us-sub">Fastest way to get a quote. Send a photo of the job and we'll price it same day.</p>
@@ -1622,9 +1924,9 @@
           </div>
 
           <!-- Right: Form -->
-          <div class="form-card">
+          <div class="form-card reveal reveal-delay-2">
             <span class="form-option-label">Or Fill Out the Form</span>
-            <h2 class="form-title" id="contact-heading">Get Your Free Estimate</h2>
+            <h2 class="form-title reveal" id="contact-heading">Get Your Free Estimate</h2>
             <p class="form-sub">No obligation. Just straight answers and fair pricing.</p>
 
             <!--
@@ -1871,6 +2173,84 @@
     // Close on Escape
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') closeMenu();
+    });
+  </script>
+
+  <!-- REPLACE: phone number -->
+  <a href="tel:+1XXXXXXXXXX"
+     class="float-call-btn"
+     aria-label="Call BF Hauling and Demo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.4 2.1L8.1 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.9.6 2.9.7a2 2 0 011.6 2z"/></svg>
+    <span class="float-call-label">CALL US</span>
+  </a>
+
+  <!-- Stats counter animation -->
+  <script>
+    (function () {
+      // Pre-initialize count-down elements to their dramatic start value
+      // so users never see the final "0" before animation begins
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.querySelectorAll('.stat-count[data-count-down="true"]').forEach(function (el) {
+          el.textContent = '47';
+        });
+      }
+
+      var statsObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var el = entry.target;
+          statsObserver.unobserve(el);
+
+          var target = parseInt(el.dataset.target, 10);
+          var isCountDown = el.dataset.countDown === 'true';
+          var duration = 1400;
+          var startVal = isCountDown ? 47 : 0;
+
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            el.textContent = target;
+            return;
+          }
+
+          var startTime = null;
+          function tick(now) {
+            if (!startTime) startTime = now;
+            var elapsed = now - startTime;
+            var progress = Math.min(elapsed / duration, 1);
+            // ease-out cubic: fast start, decelerates near end
+            var eased = 1 - Math.pow(1 - progress, 3);
+            var current = Math.round(isCountDown
+              ? startVal - eased * (startVal - target)
+              : eased * target);
+            el.textContent = current;
+            if (progress < 1) {
+              requestAnimationFrame(tick);
+            } else {
+              el.textContent = target;
+            }
+          }
+          requestAnimationFrame(tick);
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll('.stat-count').forEach(function (el) {
+        statsObserver.observe(el);
+      });
+    }());
+  </script>
+
+  <!-- Scroll reveal observer -->
+  <script>
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+      revealObserver.observe(el);
     });
   </script>
 
