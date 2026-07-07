@@ -2163,7 +2163,7 @@
       <div class="wrap">
         <div class="why-us-grid">
 
-          <div class="why-us-pull reveal">
+          <div class="why-us-pull">
             <p class="why-us-quote">
               "You're not hiring a company.<br>
               You're hiring two guys<br>
@@ -2956,6 +2956,95 @@
             openItem = item;
           }
         });
+      });
+    }());
+  </script>
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Why Us — pinned scroll story -->
+  <script>
+    (function () {
+      if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      var section = document.querySelector('.why-us');
+      var quote   = document.querySelector('.why-us-quote');
+      var paras   = gsap.utils.toArray('.why-us-copy p');
+
+      if (!section || !quote || !paras.length) return;
+
+      ScrollTrigger.matchMedia({
+
+        // Desktop / tablet — pin the section and step through paragraphs as the user scrolls
+        '(min-width: 901px)': function () {
+          var scrollLength = paras.length * 350;
+
+          gsap.set(quote, { scale: 0.85, transformOrigin: 'center left' });
+          gsap.set(paras, { opacity: 0, x: -60 });
+
+          var trigger = ScrollTrigger.create({
+            trigger: section,
+            start: 'top top',
+            end: '+=' + scrollLength,
+            pin: true,
+            anticipatePin: 1,
+            onUpdate: function (self) {
+              gsap.set(quote, { scale: 0.85 + self.progress * 0.15 });
+
+              var step = 1 / paras.length;
+              paras.forEach(function (p, i) {
+                var revealed = self.progress >= i * step;
+                if (revealed && p.dataset.revealed !== 'true') {
+                  p.dataset.revealed = 'true';
+                  gsap.to(p, { opacity: 1, x: 0, duration: 0.4, ease: 'power2.out', overwrite: 'auto' });
+                } else if (!revealed && p.dataset.revealed === 'true') {
+                  p.dataset.revealed = 'false';
+                  gsap.to(p, { opacity: 0, x: -60, duration: 0.4, ease: 'power2.out', overwrite: 'auto' });
+                }
+              });
+            }
+          });
+
+          return function () {
+            trigger.kill();
+            gsap.set([quote].concat(paras), { clearProps: 'all' });
+          };
+        },
+
+        // Mobile — no pin, just a light staggered reveal so content isn't stuck hidden
+        '(max-width: 900px)': function () {
+          gsap.set(quote, { scale: 0.85, transformOrigin: 'center left' });
+          gsap.set(paras, { opacity: 0, x: -60 });
+
+          var quoteTween = gsap.to(quote, {
+            scale: 1,
+            duration: 0.4,
+            ease: 'power2.out',
+            scrollTrigger: { trigger: quote, start: 'top 80%' }
+          });
+
+          paras.forEach(function (p, i) {
+            gsap.to(p, {
+              opacity: 1,
+              x: 0,
+              duration: 0.4,
+              ease: 'power2.out',
+              delay: i * 0.12,
+              scrollTrigger: { trigger: p, start: 'top 85%' }
+            });
+          });
+
+          return function () {
+            quoteTween.scrollTrigger && quoteTween.scrollTrigger.kill();
+            gsap.set([quote].concat(paras), { clearProps: 'all' });
+          };
+        }
+
       });
     }());
   </script>
